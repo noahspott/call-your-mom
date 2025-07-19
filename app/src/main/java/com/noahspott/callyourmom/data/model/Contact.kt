@@ -1,4 +1,4 @@
-package com.noahspott.callyourmom
+package com.noahspott.callyourmom.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
