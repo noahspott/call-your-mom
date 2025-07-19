@@ -16,5 +16,5 @@ data class Interaction(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val contactId: Int,
-    val date: Long
+    val timestamp: Long
 )

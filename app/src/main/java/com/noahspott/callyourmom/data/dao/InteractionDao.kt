@@ -1,0 +1,29 @@
+package com.noahspott.callyourmom.data.dao
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Query
+import androidx.room.Upsert
+import com.noahspott.callyourmom.data.model.Interaction
+
+@Dao
+interface InteractionDao {
+    @Upsert
+    suspend fun upsert(interaction: Interaction)
+    @Delete
+    suspend fun delete(interaction: Interaction)
+
+    @Query("""
+        SELECT * FROM interaction
+        WHERE contactId = :contactId
+        """)
+    fun getAllContactInteractions(contactId: Int)
+
+    @Query("""
+        SELECT * FROM interaction
+        WHERE contactId = :contactId
+        ORDER BY timestamp DESC
+        LIMIT 1
+    """)
+    fun getLastContactInteraction(contactId: Int)
+}
