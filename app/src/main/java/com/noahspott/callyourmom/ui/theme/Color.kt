@@ -1,4 +1,4 @@
-package com.example.callyourmom.ui.theme
+package com.noahspott.callyourmom.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

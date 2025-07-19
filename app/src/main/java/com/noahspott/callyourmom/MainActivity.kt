@@ -1,0 +1,19 @@
+package com.noahspott.callyourmom
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import com.noahspott.callyourmom.ui.theme.CallYourMomTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            CallYourMomTheme {
+
+            }
+        }
+    }
+}

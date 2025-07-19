@@ -1,4 +1,4 @@
-package com.example.callyourmom
+package com.noahspott.callyourmom
 
 import org.junit.Test
 
