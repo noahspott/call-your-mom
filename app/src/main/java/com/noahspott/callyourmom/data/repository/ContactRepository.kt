@@ -1,7 +1,7 @@
-package com.noahspott.callyourmom.repository
+package com.noahspott.callyourmom.data.repository
 
-import com.noahspott.callyourmom.data.database.AppDatabase
-import com.noahspott.callyourmom.data.model.Contact
+import com.noahspott.callyourmom.data.local.database.AppDatabase
+import com.noahspott.callyourmom.data.local.model.Contact
 import kotlinx.coroutines.flow.Flow
 
 class ContactRepository(private val db: AppDatabase) {

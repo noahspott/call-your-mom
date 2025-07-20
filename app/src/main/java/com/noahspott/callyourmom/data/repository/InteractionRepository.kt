@@ -1,7 +1,7 @@
-package com.noahspott.callyourmom.repository
+package com.noahspott.callyourmom.data.repository
 
-import com.noahspott.callyourmom.data.database.AppDatabase
-import com.noahspott.callyourmom.data.model.Interaction
+import com.noahspott.callyourmom.data.local.database.AppDatabase
+import com.noahspott.callyourmom.data.local.model.Interaction
 
 class InteractionRepository(private val db : AppDatabase) {
     suspend fun upsert(interaction: Interaction){

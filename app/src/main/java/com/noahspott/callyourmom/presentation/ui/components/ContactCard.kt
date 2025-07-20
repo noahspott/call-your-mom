@@ -1,4 +1,4 @@
-package com.noahspott.callyourmom.ui.components
+package com.noahspott.callyourmom.presentation.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -25,7 +25,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.noahspott.callyourmom.data.model.Contact
+import com.noahspott.callyourmom.data.local.model.Contact
 
 
 @Composable

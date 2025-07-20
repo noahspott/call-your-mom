@@ -1,4 +1,4 @@
-package com.noahspott.callyourmom.ui.theme
+package com.noahspott.callyourmom.presentation.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
