@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
 import com.noahspott.callyourmom.data.local.model.Interaction
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface InteractionDao {
@@ -17,7 +18,7 @@ interface InteractionDao {
         SELECT * FROM interaction
         WHERE contactId = :contactId
         """)
-    fun getAllContactInteractions(contactId: Int)
+    fun getAllContactInteractions(contactId: Int): Flow<List<Interaction>>
 
     @Query("""
         SELECT * FROM interaction
@@ -25,5 +26,5 @@ interface InteractionDao {
         ORDER BY timestamp DESC
         LIMIT 1
     """)
-    fun getLastContactInteraction(contactId: Int)
+    fun getLastContactInteraction(contactId: Int): Flow<Interaction>
 }

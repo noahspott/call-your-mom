@@ -25,6 +25,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.noahspott.callyourmom.R
 import com.noahspott.callyourmom.data.local.model.Contact
 
 
@@ -69,7 +70,7 @@ fun ContactCard(contact: Contact) {
             ) {
                 Row {
                     Text(
-                        text = contact.daysSinceLastContact.toString(),
+                        text = "10",
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
@@ -103,9 +104,8 @@ fun ContactCard(contact: Contact) {
 @Composable
 fun ContactCardPreview() {
     val sampleContact = Contact(
-        id = "1",
+        id = 1,
         name = "Maria Johnson",
-        daysSinceLastContact = 3,
         phoneNumber = "5702431651",
         imageUrl = null // or use a real image URL if testing
     )
