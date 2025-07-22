@@ -26,11 +26,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.noahspott.callyourmom.R
-import com.noahspott.callyourmom.data.local.model.Contact
+import com.noahspott.callyourmom.presentation.ui_model.ContactCardModel
 
 
 @Composable
-fun ContactCard(contact: Contact) {
+fun ContactCard(contact: ContactCardModel) {
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -70,7 +70,7 @@ fun ContactCard(contact: Contact) {
             ) {
                 Row {
                     Text(
-                        text = "10",
+                        text = contact.daysSinceLastInteraction.toString(),
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
@@ -103,11 +103,12 @@ fun ContactCard(contact: Contact) {
 @Preview(showBackground = true)
 @Composable
 fun ContactCardPreview() {
-    val sampleContact = Contact(
-        id = 1,
+    val sampleContact = ContactCardModel(
+        contactId = 1,
         name = "Maria Johnson",
         phoneNumber = "5702431651",
-        imageUrl = null // or use a real image URL if testing
+        imageUrl = null,
+        daysSinceLastInteraction = 20
     )
 
     ContactCard(contact = sampleContact)
