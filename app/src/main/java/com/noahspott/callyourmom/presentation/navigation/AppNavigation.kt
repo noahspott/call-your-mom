@@ -10,7 +10,7 @@ import com.noahspott.callyourmom.presentation.ui.screens.ContactListScreen
 fun AppNavigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "contactListScreen") {
         composable("contactListScreen") {
-            ContactListScreen()
+            ContactListScreen(navController)
         }
     }
 }
