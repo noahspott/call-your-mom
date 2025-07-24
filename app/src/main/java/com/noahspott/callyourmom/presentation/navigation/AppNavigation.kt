@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.noahspott.callyourmom.presentation.ui.screens.AddContactScreen
 import com.noahspott.callyourmom.presentation.ui.screens.ContactListScreen
 
 @Composable
@@ -12,6 +13,9 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier) {
     NavHost(navController = navController, startDestination = "contactListScreen") {
         composable("contactListScreen") {
             ContactListScreen(navController, modifier)
+        }
+        composable("addContactScreen") {
+            AddContactScreen(navController, modifier)
         }
     }
 }

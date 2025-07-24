@@ -48,7 +48,7 @@ fun ContactListScreen(navController: NavController, modifier: Modifier) {
             }
         } else {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = {println("Add new contact!")}) {
+                IconButton(onClick = {navController.navigate(route = "addContactScreen")}) {
                     Icon(Icons.Filled.AddCircle, "Add a new contact")
                 }
                 Text("Add a new contact")
