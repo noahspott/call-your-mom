@@ -23,7 +23,7 @@ interface ContactDao {
     suspend fun upsertContact(contact: Contact)
 
     @Delete
-    suspend fun  deleteContact(contact: Contact)
+    suspend fun deleteContact(contact: Contact)
 
     @Query("SELECT * FROM contact")
     fun getAllContacts(): Flow<List<Contact>>
