@@ -6,13 +6,13 @@ import com.noahspott.callyourmom.data.repository.ContactRepository
 import com.noahspott.callyourmom.data.repository.InteractionRepository
 
 @Suppress("UNCHECKED_CAST")
-class ContactScreenViewModelFactory(
+class ContactListScreenViewModelFactory(
     private val contactRepository: ContactRepository,
     private val interactionRepository: InteractionRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ContactScreenViewModel::class.java)) {
-            return ContactScreenViewModel(contactRepository, interactionRepository) as T
+        if (modelClass.isAssignableFrom(ContactListScreenViewModel::class.java)) {
+            return ContactListScreenViewModel(contactRepository, interactionRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

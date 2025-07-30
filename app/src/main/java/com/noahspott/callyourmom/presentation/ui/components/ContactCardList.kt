@@ -9,10 +9,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.noahspott.callyourmom.data.local.model.Contact
 import com.noahspott.callyourmom.presentation.ui_model.ContactCardModel
 
 @Composable
-fun ContactCardList(contactCards: List<ContactCardModel>, callButtonHandler: (ContactCardModel) -> Unit) {
+fun ContactCardList(contactCards: List<ContactCardModel>, callButtonHandler: (ContactCardModel) -> Unit, onContactCardClick: (ContactCardModel) -> Unit) {
     if(contactCards.isEmpty()) {
         Box(
             modifier = Modifier.fillMaxSize(),
@@ -29,7 +30,7 @@ fun ContactCardList(contactCards: List<ContactCardModel>, callButtonHandler: (Co
             modifier = Modifier.fillMaxSize()
         ) {
             items(contactCards) { card ->
-                ContactCard(contact = card, callButtonHandler)
+                ContactCard(contact = card, callButtonHandler, onContactCardClick)
             }
         }
     }

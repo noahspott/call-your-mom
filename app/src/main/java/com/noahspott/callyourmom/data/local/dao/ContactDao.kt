@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ContactDao {
     @Insert
-    suspend fun insertContact(contact: Contact)
+    suspend fun insertContact(contact: Contact): Long
 
     @Update
     suspend fun updateContact(contact: Contact)

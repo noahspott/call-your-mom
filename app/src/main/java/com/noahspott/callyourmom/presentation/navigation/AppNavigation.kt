@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.noahspott.callyourmom.presentation.ui.screens.AddContactScreen
 import com.noahspott.callyourmom.presentation.ui.screens.ContactListScreen
+import com.noahspott.callyourmom.presentation.ui.screens.ViewContactScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController, modifier: Modifier) {
@@ -16,6 +17,12 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier) {
         }
         composable("addContactScreen") {
             AddContactScreen(navController, modifier)
+        }
+        composable("viewContactScreen/{contactId}") { backStackEntry ->
+            val contactId = backStackEntry.arguments?.getString("contactId")?.toIntOrNull()
+            if (contactId != null) {
+                ViewContactScreen(navController, modifier, contactId = contactId)
+            }
         }
     }
 }

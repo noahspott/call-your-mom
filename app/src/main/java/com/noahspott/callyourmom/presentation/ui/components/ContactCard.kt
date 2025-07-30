@@ -2,6 +2,7 @@ package com.noahspott.callyourmom.presentation.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,11 +33,14 @@ import com.noahspott.callyourmom.presentation.ui_model.ContactCardModel
 
 
 @Composable
-fun ContactCard(contact: ContactCardModel, callButtonHandler: (ContactCardModel)-> Unit) {
+fun ContactCard(contact: ContactCardModel, callButtonHandler: (ContactCardModel)-> Unit, onContactCardClick: (ContactCardModel) -> Unit) {
     Card(
         modifier = Modifier
             .padding(8.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .clickable {
+                onContactCardClick.invoke(contact)
+            },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp,
             hoveredElevation = 8.dp,

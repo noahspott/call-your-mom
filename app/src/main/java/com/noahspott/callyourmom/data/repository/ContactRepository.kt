@@ -7,8 +7,8 @@ import com.noahspott.callyourmom.presentation.ui_model.ContactWithLastTimestamp
 import kotlinx.coroutines.flow.Flow
 
 class ContactRepository(private val db: AppDatabase) {
-    suspend fun insertContact(contact: Contact) {
-        db.contactDao.insertContact(contact)
+    suspend fun insertContact(contact: Contact): Long {
+        return db.contactDao.insertContact(contact)
     }
 
     suspend fun updateContact(contact: Contact) {

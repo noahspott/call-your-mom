@@ -3,6 +3,7 @@ package com.noahspott.callyourmom.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.noahspott.callyourmom.data.local.model.Contact
+import com.noahspott.callyourmom.data.local.model.Interaction
 import com.noahspott.callyourmom.data.repository.ContactRepository
 import com.noahspott.callyourmom.data.repository.InteractionRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,13 +27,17 @@ class AddContactScreenViewModel(private val contactRepository: ContactRepository
 
     fun onSave() {
         viewModelScope.launch {
-            val newContact = Contact(
+            val contactId = contactRepository.insertContact(Contact(
                 id = 0,
                 name = name.value,
                 phoneNumber = phone.value,
-            )
+            ))
 
-            contactRepository.insertContact(newContact)
+            interactionRepository.upsert(Interaction(
+                id = 0,
+                contactId = contactId.toInt(),
+                timestamp = System.currentTimeMillis()
+            ))
         }
     }
 }
